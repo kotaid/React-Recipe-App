@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import axios from "axios";
+import { createGlobalStyle } from "styled-components";
+
+//Import Components
+import Header from "./components/Header";
+import RandomMealsBar from "./components/RandomMealsBar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyles />
+      <Header />
+      <RandomMealsBar />
     </div>
   );
 }
 
 export default App;
+
+const GlobalStyles = createGlobalStyle`
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+html{
+    @media (max-width: 1000px){
+        font-size: 75%;
+    }   
+    body{
+      font-family: muli, sans-serif;
+    }
+}
+`;
